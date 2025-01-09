@@ -13,16 +13,18 @@ import fs from "fs";
 import net from "net";
 import path from "path";
 import { fileURLToPath } from "url";
-import { initializeDbCache } from "./cache/index.ts";
-import { character } from "./character.ts";
-import { startChat } from "./chat/index.ts";
-import { initializeClients } from "./clients/index.ts";
+import { initializeDbCache } from "./cache/index";
+import { character } from "./character";
+import { startChat } from "./chat/index";
+import { initializeClients } from "./clients/index";
 import {
   getTokenForProvider,
   loadCharacters,
   parseArguments,
-} from "./config/index.ts";
-import { initializeDatabase } from "./database/index.ts";
+} from "./config/index";
+import { initializeDatabase } from "./database/index";
+import evmPlugin from "@elizaos/plugin-evm";
+import { TransferAction } from "@elizaos/plugin-evm";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -56,6 +58,7 @@ export function createAgent(
     evaluators: [],
     character,
     plugins: [
+      evmPlugin,
       bootstrapPlugin,
       nodePlugin,
       character.settings?.secrets?.WALLET_PUBLIC_KEY ? solanaPlugin : null,
@@ -85,7 +88,7 @@ async function startAgent(character: Character, directClient: DirectClient) {
     await db.init();
 
     const cache = initializeDbCache(character, db);
-    const runtime = createAgent(character, db, cache, token);
+    const runtime = createAgent(character, db, cache, token || '');
 
     await runtime.initialize();
 
@@ -166,6 +169,7 @@ const startAgents = async () => {
 
   elizaLogger.log("Chat started. Type 'exit' to quit.");
   const chat = startChat(characters);
+
   chat();
 };
 

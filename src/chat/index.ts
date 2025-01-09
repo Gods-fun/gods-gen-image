@@ -34,7 +34,7 @@ async function handleUserInput(input, agentId) {
     );
 
     const data = await response.json();
-    data.forEach((message) => console.log(`${"Agent"}: ${message.text}`));
+    (data as Array<{ text: string }>)?.forEach((message) => console.log(`${"Agent"}: ${message.text}`));
   } catch (error) {
     console.error("Error fetching response:", error);
   }
