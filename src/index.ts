@@ -11,8 +11,6 @@ import { createNodePlugin } from "@elizaos/plugin-node";
 import { solanaPlugin } from "@elizaos/plugin-solana";
 import fs from "fs";
 import net from "net";
-import path from "path";
-import { fileURLToPath } from "url";
 import { initializeDbCache } from "./cache/index";
 import { character } from "./character";
 import { startChat } from "./chat/index";
@@ -24,11 +22,26 @@ import {
 } from "./config/index";
 import { initializeDatabase } from "./database/index";
 import evmPlugin from "@elizaos/plugin-evm";
-import { TransferAction } from "@elizaos/plugin-evm";
+
+import * as dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Load environment variables
+const result = dotenv.config({ path: path.join(__dirname, '../.env') });
+
+if (result.error) {
+  console.error('Error loading .env file:', result.error);
+  process.exit(1);
+}
+
+if (!process.env.EVM_PRIVATE_KEY) {
+  console.error('EVM_PRIVATE_KEY is required but not set in .env file');
+  process.exit(1);
+}
 export const wait = (minTime: number = 1000, maxTime: number = 3000) => {
   const waitTime =
     Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
