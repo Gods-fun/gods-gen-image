@@ -27,7 +27,7 @@ class TwitterManager {
 
     constructor(runtime: IAgentRuntime, twitterConfig: TwitterConfig) {
         // Fix constructor call to match ClientBase signature
-        this.client = new ClientBase(runtime);
+        this.client = new ClientBase(runtime, twitterConfig);
         this.client.twitterConfig = twitterConfig;
 
         // Posting logic
