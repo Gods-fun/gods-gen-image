@@ -1,10 +1,18 @@
-*.ts
+# Ignore dist folders
 dist
-!index.ts
-!character.ts
-**/.env
-node_modules
 dist/
 
+# Environment files
+**/.env
+
+# Dependencies
+node_modules
+
+# Database files
 db.sqlite
+
+# IDE files
 .idea
+
+# Keep all TypeScript files
+!*.ts
