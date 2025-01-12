@@ -1,20 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2020",
     "module": "ESNext",
-    "lib": ["ESNext", "dom"],  // Add back "dom"
-    "moduleResolution": "Bundler",
-    "outDir": "./dist",
-    "rootDir": ".",
-    "strict": false,
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": false,
-    "resolveJsonModule": true,
-    "noImplicitAny": false,
     "allowJs": true,
-    "checkJs": false,
-    "noEmitOnError": false,
-    "moduleDetection": "force"
+    "strict": true
   }
 }
