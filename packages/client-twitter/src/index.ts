@@ -26,11 +26,6 @@ class TwitterManager {
         // Only enable posting and interactions
         this.post = new TwitterPostClient(this.client, runtime);
         this.interaction = new TwitterInteractionClient(this.client, runtime);
-
-        elizaLogger.log("Twitter Client Configuration:");
-        elizaLogger.log(`- Username: ${twitterConfig.TWITTER_USERNAME}`);
-        elizaLogger.log(`- Processing mentions only from: 0x_sero`);
-        elizaLogger.log(`- Dry Run Mode: ${twitterConfig.TWITTER_DRY_RUN ? "enabled" : "disabled"}`);
     }
 }
 
