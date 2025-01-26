@@ -56,13 +56,14 @@ Here is the current post text again. Remember to include an action if the curren
 ` + messageCompletionFooter;
 
 // Template for determining when the agent should respond, with focus on transfer requests
+// Remove transfer-related template content
 export const twitterShouldRespondTemplate = () =>
     `# INSTRUCTIONS: Determine if {{agentName}} (@{{twitterUserName}}) should respond to the message and participate in the conversation.
 
 Response options are RESPOND, IGNORE and STOP.
 
 PRIORITY RULES:
-- ALWAYS RESPOND to transfer/bridge/swap requests
+- ALWAYS RESPOND to image generation requests
 - ALWAYS RESPOND to messages directed at {{agentName}} (mentions)
 
 Rules for responding:
@@ -88,17 +89,20 @@ Thread of Tweets You Are Replying To:
 # INSTRUCTIONS: Respond with [RESPOND] if {{agentName}} should respond, or [IGNORE] if {{agentName}} should not respond to the last message and [STOP] if {{agentName}} should stop participating in the conversation.
 ` + shouldRespondFooter;
 
-// Helper function to identify transfer-related requests
-const isTransferRequest = (text: string): boolean => {
-    const transferKeywords = [
-        'transfer',
-        'send',
-        'eth',
-        'bridge',
-        'swap'
+// Remove transfer request check function and replace with image generation check
+const isImageGenerationRequest = (text: string): boolean => {
+    const imageKeywords = [
+        'generate image',
+        'create image',
+        'make image',
+        'draw',
+        'picture',
+        'generate a',
+        'create a',
+        'make a'
     ];
     const lowerText = text.toLowerCase();
-    return transferKeywords.some(keyword => lowerText.includes(keyword));
+    return imageKeywords.some(keyword => lowerText.includes(keyword));
 };
 
 export class TwitterInteractionClient {
@@ -126,12 +130,12 @@ export class TwitterInteractionClient {
 
         async handleTwitterInteractions() {
             elizaLogger.log("Starting Twitter interactions check");
-            const twitterUsername = this.client.profile!.username;
+            const twitterUsername = this.client?.profile?.username;
 
             try {
                 // Get configurable search parameters
                 const searchParams = this.getSearchParameters();
-                const tweets = await this.fetchAndFilterTweets(twitterUsername, searchParams);
+                const tweets = await this.fetchAndFilterTweets(twitterUsername!, searchParams);
 
                 if (tweets.length === 0) {
                     elizaLogger.log("No valid tweets to process");
@@ -198,6 +202,7 @@ export class TwitterInteractionClient {
             return queries.join(" OR ");
         }
 
+
         private async processTargetUsers(params: any): Promise<Tweet[]> {
             elizaLogger.log("Processing target users:", params.targetUsers);
             const targetTweets: Tweet[] = [];
@@ -230,8 +235,8 @@ export class TwitterInteractionClient {
         private filterUserTweets(tweets: Tweet[], params: any): Tweet[] {
             return tweets.filter(tweet => {
                 const isUnprocessed = !this.client.lastCheckedTweetId ||
-                                    parseInt(tweet.id) > this.client.lastCheckedTweetId;
-                const isRecent = Date.now() - tweet.timestamp * 1000 < params.minTimestamp;
+                                    parseInt(tweet.id!) > this.client.lastCheckedTweetId;
+                const isRecent = Date.now() - tweet.timestamp! * 1000 < params.minTimestamp;
 
                 elizaLogger.log(`Tweet ${tweet.id} checks:`, {
                     isUnprocessed,
@@ -253,20 +258,20 @@ export class TwitterInteractionClient {
                         tweet.text &&
                         tweet.timestamp &&
                         tweet.username &&
-                        params.targetUsers.map(u => u.toLowerCase()).includes(tweet.username.toLowerCase());
+                        params.targetUsers.map((u: string) => u.toLowerCase()).includes(tweet.username.toLowerCase());
 
                     if (!isValidTweet) {
                         elizaLogger.log("Filtered out tweet:", {
                             id: tweet.id,
                             author: tweet.username,
-                            reason: !params.targetUsers.map(u => u.toLowerCase()).includes(tweet.username?.toLowerCase()) ?
+                            reason: !params.targetUsers.map((u: string) => u.toLowerCase()).includes(tweet.username?.toLowerCase()) ?
                                 "Not from target user" : "Invalid tweet structure"
                         });
                     }
 
                     return isValidTweet;
                 })
-                .sort((a, b) => a.id.localeCompare(b.id));
+                .sort((a, b) => a.id!.localeCompare(b.id!));
         }
 
         private async processTweets(tweets: Tweet[]) {
@@ -296,8 +301,8 @@ export class TwitterInteractionClient {
                 });
 
                 // Update last checked tweet ID
-                if (!this.client.lastCheckedTweetId || BigInt(tweet.id) > this.client.lastCheckedTweetId) {
-                    this.client.lastCheckedTweetId = BigInt(tweet.id);
+                if (!this.client.lastCheckedTweetId || BigInt(tweet.id!) > this.client.lastCheckedTweetId) {
+                    this.client.lastCheckedTweetId = BigInt(tweet.id!);
                     await this.client.cacheLatestCheckedTweetId();
                 }
             }
@@ -328,11 +333,11 @@ export class TwitterInteractionClient {
             return { text: "", action: "IGNORE" };
         }
 
-        // Check for transfer request
-        const isTransfer = isTransferRequest(message.content.text);
-        if (isTransfer) {
-            elizaLogger.log("Transfer request detected in tweet:", tweet.id);
-            message.content.action = "transfer";
+        // Check for image generation request instead of transfer
+        const isImageGen = isImageGenerationRequest(message.content.text);
+        if (isImageGen) {
+            elizaLogger.log("Image generation request detected in tweet:", tweet.id);
+            message.content.action = "GENERATE_IMAGE";
         }
 
         // Log message content
@@ -497,43 +502,6 @@ export class TwitterInteractionClient {
         }
 
         // Handle transfer requests specifically
-        if (isTransferRequest(message.content.text)) {
-            elizaLogger.log("Transfer request detected:", {
-                tweetId: tweet.id,
-                text: message.content.text,
-                from: tweet.username
-            });
-
-            try {
-                message.content.action = "transfer";
-                const state = await this.runtime.composeState(message, {
-                    twitterUserName: this.client.twitterConfig.TWITTER_USERNAME,
-                    currentPost: formatTweet(tweet),
-                    formattedConversation: thread
-                        .map((t) => `@${t.username}: ${t.text}`)
-                        .join("\n\n"),
-                });
-
-                elizaLogger.log("Transfer state composed:", {
-                    action: state.content?.action,
-                    text: state.content?.text
-                });
-
-                const result = await this.runtime.processActions(
-                    message,
-                    [message],
-                    state
-                );
-
-                elizaLogger.log("Transfer action result:", result);
-            } catch (error) {
-                elizaLogger.error("Transfer processing error:", {
-                    error,
-                    tweetId: tweet.id,
-                    text: message.content.text
-                });
-            }
-        }
     }
     async buildConversationThread(
         tweet: Tweet,
@@ -567,7 +535,7 @@ export class TwitterInteractionClient {
                 const roomId = stringToUuid(
                     currentTweet.conversationId + "-" + this.runtime.agentId
                 );
-                const userId = stringToUuid(currentTweet.userId);
+                const userId = stringToUuid(currentTweet.userId!);
 
                 await this.runtime.ensureConnection(
                     userId,
@@ -594,22 +562,22 @@ export class TwitterInteractionClient {
                               )
                             : undefined,
                     },
-                    createdAt: currentTweet.timestamp * 1000,
+                    createdAt: currentTweet.timestamp! * 1000,
                     roomId,
                     userId:
                         currentTweet.userId === this.twitterUserId
                             ? this.runtime.agentId
-                            : stringToUuid(currentTweet.userId),
-                    embedding: getEmbeddingZeroVector(),
+                            : stringToUuid(currentTweet.userId!),
+                    embedding: [],
                 });
             }
 
-            if (visited.has(currentTweet.id)) {
+            if (visited.has(currentTweet.id!)) {
                 elizaLogger.log("Already visited tweet:", currentTweet.id);
                 return;
             }
 
-            visited.add(currentTweet.id);
+            visited.add(currentTweet.id!);
             thread.unshift(currentTweet);
 
             elizaLogger.debug("Current thread state:", {

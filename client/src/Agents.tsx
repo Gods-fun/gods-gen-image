@@ -5,7 +5,15 @@ import "./App.css";
 
 function Agents() {
     const navigate = useNavigate();
-    const { data: agents, isLoading } = useGetAgentsQuery()
+    const { data: agents, isLoading, error } = useGetAgentsQuery();
+    if (error) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center p-4">
+                <h1 className="text-2xl font-bold mb-4 text-red-600">Error loading agents</h1>
+                <p className="text-gray-600">{(error as Error).message}</p>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center p-4">

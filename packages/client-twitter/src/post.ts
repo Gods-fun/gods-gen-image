@@ -46,25 +46,14 @@ interface PendingTweet {
 type PendingTweetApprovalStatus = "PENDING" | "APPROVED" | "REJECTED";
 
 const twitterPostTemplate = `
-# Areas of Expertise
-{{knowledge}}
-
 # About {{agentName}} (@{{twitterUserName}}):
 {{bio}}
 {{lore}}
-{{topics}}
 
-{{providers}}
-
-{{characterPostExamples}}
-
-{{postDirections}}
-
-# Task: Generate a post in the voice and style and perspective of {{agentName}} @{{twitterUserName}}.
-Write a post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
-Your response should be 1, 2, or 3 sentences (choose the length at random).
-Your response should not contain any questions. Brief, concise statements only. The total character count MUST be less than {{maxTweetLength}}. No emojis. Use \\n\\n (double spaces) between statements if there are multiple statements in your response.`;
-
+# Task: Generate an image description for {{agentName}} @{{twitterUserName}}.
+Write a post that describes the generated image, from the perspective of {{agentName}}. 
+Your response should be 1-2 sentences, brief and descriptive.
+The total character count MUST be less than {{maxTweetLength}}. No emojis.`;
 export const twitterActionTemplate =
     `
 # INSTRUCTIONS: Determine actions for {{agentName}} (@{{twitterUserName}}) based on:
@@ -256,12 +245,12 @@ export class TwitterPostClient {
             if (Date.now() > lastPostTimestamp + delay) {
                 // Ensure only your tweets are processed
                 const tweets = await this.client.fetchTimelineForActions(15);
-                const myTweets = tweets.filter(tweet => tweet.username.toLowerCase() === '0x_sero');
+                const myTweets = tweets.filter(tweets => tweets);
 
                 if (myTweets.length > 0) {
                     await this.generateNewTweet();
                 } else {
-                    elizaLogger.log("No tweets from 0x_sero to process");
+                    elizaLogger.log("No tweets to process");
                 }
             }
 
@@ -440,13 +429,20 @@ export class TwitterPostClient {
     async sendStandardTweet(
         client: ClientBase,
         content: string,
-        tweetId?: string
+        tweetId?: string,
+        imageUrl?: string
     ) {
         try {
+            const tweetData = {
+                text: content,
+                ...(tweetId && { reply: { in_reply_to_tweet_id: tweetId } }),
+                ...(imageUrl && { media: { media_ids: [imageUrl] } })
+            };
+
             const standardTweetResult = await client.requestQueue.add(
-                async () =>
-                    await client.twitterClient.sendTweet(content, tweetId)
+                async () => await client.twitterClient.sendTweet(content, tweetId, imageUrl)
             );
+            
             const body = await standardTweetResult.json();
             if (!body?.data?.create_tweet?.tweet_results?.result) {
                 console.error("Error sending tweet; Bad response:", body);
@@ -465,18 +461,20 @@ export class TwitterPostClient {
         cleanedContent: string,
         roomId: UUID,
         newTweetContent: string,
-        twitterUsername: string
+        twitterUsername: string,
+        imageUrl?: string // Add imageUrl parameter
     ) {
         try {
-            elizaLogger.log(`Posting new tweet:\n`);
+            elizaLogger.log(`Posting new tweet with image:\n${cleanedContent}`);
+            elizaLogger.debug(`Image URL: ${imageUrl}`);
 
             let result;
-
-            if (cleanedContent.length > DEFAULT_MAX_TWEET_LENGTH) {
-                result = await this.handleNoteTweet(
-                    client,
-                    runtime,
-                    cleanedContent
+            if (imageUrl) {
+                result = await this.sendStandardTweet(
+                    client, 
+                    cleanedContent,
+                    undefined,
+                    imageUrl
                 );
             } else {
                 result = await this.sendStandardTweet(client, cleanedContent);
@@ -499,7 +497,6 @@ export class TwitterPostClient {
             elizaLogger.error("Error sending tweet:", error);
         }
     }
-
     /**
      * Generates and posts a new tweet. If isDryRun is true, only logs what would have been posted.
      */

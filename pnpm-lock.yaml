@@ -13,46 +13,46 @@ importers:
     dependencies:
       '@elizaos/adapter-postgres':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@elizaos/adapter-sqlite':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)
       '@elizaos/client-auto':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)
       '@elizaos/client-direct':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
       '@elizaos/client-discord':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(ffmpeg-static@5.2.0)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(ffmpeg-static@5.2.0)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)
       '@elizaos/client-telegram':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@elizaos/client-twitter':
         specifier: workspace:*
         version: link:packages/client-twitter
       '@elizaos/core':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@elizaos/plugin-bootstrap':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
       '@elizaos/plugin-evm':
         specifier: ^0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@solana/wallet-adapter-base@0.9.23(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10)))(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.22.5(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8))(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@solana/wallet-adapter-base@0.9.23(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10)))(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.22.5(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8))(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
       '@elizaos/plugin-image-generation':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
       '@elizaos/plugin-node':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(zod@3.23.8)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(zod@3.23.8)
       '@elizaos/plugin-solana':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(form-data@4.0.1)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(form-data@4.0.1)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
       '@elizaos/plugin-starknet':
         specifier: 0.1.7
-        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(axios@1.7.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(qs@6.13.1)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(axios@1.7.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(qs@6.13.1)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
       '@tavily/core':
         specifier: 0.0.2
         version: 0.0.2
@@ -89,7 +89,7 @@ importers:
         version: 16.4.7
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(typescript@5.6.3)
+        version: 10.9.2(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(typescript@5.6.3)
       tsup:
         specifier: 8.3.5
         version: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
@@ -101,7 +101,7 @@ importers:
         version: 5.6.3
       vite:
         specifier: ^4.3.3
-        version: 4.5.5(@types/node@22.8.4)
+        version: 4.5.5(@types/node@22.10.10)
 
   packages/client-twitter:
     dependencies:
@@ -127,6 +127,31 @@ importers:
       tsup:
         specifier: 8.3.5
         version: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
+
+  packages/plugin-image-generation:
+    dependencies:
+      '@elizaos/core':
+        specifier: 0.1.7
+        version: 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@supabase/supabase-js':
+        specifier: ^2.48.1
+        version: 2.48.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      canvas:
+        specifier: ^3.1.0
+        version: 3.1.0
+      tsup:
+        specifier: 8.3.5
+        version: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
+      whatwg-url:
+        specifier: 7.1.0
+        version: 7.1.0
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
+    devDependencies:
+      '@types/node':
+        specifier: ^22.10.10
+        version: 22.10.10
 
 packages:
 
@@ -504,8 +529,8 @@ packages:
     resolution: {integrity: sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.26.5':
-    resolution: {integrity: sha512-SRJ4jYmXRqV1/Xc+TIVG84WjHBXKlxO9sHQnA2Pf12QQEAp1LOh6kDzNHXcUnbH1QI0FDoPPVOt+vyUDucxpaw==}
+  '@babel/parser@7.26.7':
+    resolution: {integrity: sha512-kEvgGGgEjRUutvdVvZhbn/BxVt+5VSpwXz1j3WYXQbXDo8KzFOPNG2GQbdAiNq8g6wn1yKk7C/qrke03a84V+w==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -513,8 +538,8 @@ packages:
     resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.26.5':
-    resolution: {integrity: sha512-L6mZmwFDK6Cjh1nRCLXpa6no13ZIioJDz7mdkzHv399pThrTa/k0nUlNaenOeh2kWu/iaOQYElEpKPUswUa9Vg==}
+  '@babel/types@7.26.7':
+    resolution: {integrity: sha512-t8kDRGrKXyp6+tjUh7hw2RLyclsW4TRoRvRHtSyAX9Bb5ldlFh+90YAYY6awRXrlB4G5G2izNeGySpATlFzmOg==}
     engines: {node: '>=6.9.0'}
 
   '@bigmi/core@0.0.4':
@@ -629,9 +654,9 @@ packages:
     resolution: {integrity: sha512-YJOVVZ545x24mHzANfYoy0BJX5PDyeZlpiJjDkUBM/V/Ao7TFX9lcUvCN4nr0tbr5ubeaXxtEBILUrHtTphVeQ==}
     hasBin: true
 
-  '@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02':
-    resolution: {tarball: https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02}
-    version: 0.9.0
+  '@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063':
+    resolution: {tarball: https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063}
+    version: 0.10.0
     engines: {node: '>=12.0.0'}
 
   '@discordjs/rest@2.4.0':
@@ -2434,6 +2459,28 @@ packages:
   '@starknet-io/types-js@0.7.10':
     resolution: {integrity: sha512-1VtCqX4AHWJlRRSYGSn+4X1mqolI1Tdq62IwzoU2vUuEE72S1OlEeGhpvd6XsdqXcfHmVzYfj8k1XtKBQqwo9w==}
 
+  '@supabase/auth-js@2.67.3':
+    resolution: {integrity: sha512-NJDaW8yXs49xMvWVOkSIr8j46jf+tYHV0wHhrwOaLLMZSFO4g6kKAf+MfzQ2RaD06OCUkUHIzctLAxjTgEVpzw==}
+
+  '@supabase/functions-js@2.4.4':
+    resolution: {integrity: sha512-WL2p6r4AXNGwop7iwvul2BvOtuJ1YQy8EbOd0dhG1oN1q8el/BIRSFCFnWAMM/vJJlHWLi4ad22sKbKr9mvjoA==}
+
+  '@supabase/node-fetch@2.6.15':
+    resolution: {integrity: sha512-1ibVeYUacxWYi9i0cf5efil6adJ9WRyZBLivgjs+AUpewx1F3xPi7gLgaASI2SmIQxPoCEjAsLAzKPgMJVgOUQ==}
+    engines: {node: 4.x || >=6.0.0}
+
+  '@supabase/postgrest-js@1.18.1':
+    resolution: {integrity: sha512-dWDnoC0MoDHKhaEOrsEKTadWQcBNknZVQcSgNE/Q2wXh05mhCL1ut/jthRUrSbYcqIw/CEjhaeIPp7dLarT0bg==}
+
+  '@supabase/realtime-js@2.11.2':
+    resolution: {integrity: sha512-u/XeuL2Y0QEhXSoIPZZwR6wMXgB+RQbJzG9VErA3VghVt7uRfSVsjeqd7m5GhX3JR6dM/WRmLbVR8URpDWG4+w==}
+
+  '@supabase/storage-js@2.7.1':
+    resolution: {integrity: sha512-asYHcyDR1fKqrMpytAS1zjyEfvxuOIp1CIXX7ji4lHHcJKqyk+sLl/Vxgm4sN6u8zvuUtae9e4kDxQP2qrwWBA==}
+
+  '@supabase/supabase-js@2.48.1':
+    resolution: {integrity: sha512-VMD+CYk/KxfwGbI4fqwSUVA7CLr1izXpqfFerhnYPSi6LEKD8GoR4kuO5Cc8a+N43LnfSQwLJu4kVm2e4etEmA==}
+
   '@swc/core-darwin-arm64@1.10.7':
     resolution: {integrity: sha512-SI0OFg987P6hcyT0Dbng3YRISPS9uhLX1dzW4qRrfqQdb0i75lPJ2YWe9CN47HBazrIA5COuTzrD2Dc0TcVsSQ==}
     engines: {node: '>=10'}
@@ -2606,6 +2653,9 @@ packages:
   '@types/node@18.19.70':
     resolution: {integrity: sha512-RE+K0+KZoEpDUbGGctnGdkrLFwi1eYKTlIHNl2Um98mUkGsm1u2Ff6Ltd0e8DktTtC98uy7rSj+hO8t/QuLoVQ==}
 
+  '@types/node@22.10.10':
+    resolution: {integrity: sha512-X47y/mPNzxviAGY5TcYPtYL8JsY3kAq2n8fMmKoRCxq/c4v4pyGNCzM2R6+M5/umG4ZfHuT+sgqDYqWc9rJ6ww==}
+
   '@types/node@22.7.5':
     resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
 
@@ -2617,6 +2667,9 @@ packages:
 
   '@types/pg@8.11.10':
     resolution: {integrity: sha512-LczQUW4dbOQzsH2RQ5qoeJ6qJPdrcM/DcMLoqWQkMLMsq83J5lAX3LXjdkWdpscFy67JSOWDnh7Ny/sPFykmkg==}
+
+  '@types/phoenix@1.6.6':
+    resolution: {integrity: sha512-PIzZZlEppgrpoT2QgbnDU+MMzuR6BbCjllj0bM70lWoejMeNJAxCchxnv7J3XFkI8MpygtRpzXrIlmWUBclP5A==}
 
   '@types/qs@6.9.17':
     resolution: {integrity: sha512-rX4/bPcfmvxHDv0XjfJELTTr+iB+tn032nPILqHm5wbthUUUuVtNGGqzhya9XUxjTP8Fpr0qYgSZZKxGY++svQ==}
@@ -3207,6 +3260,10 @@ packages:
   canvas@2.11.2:
     resolution: {integrity: sha512-ItanGBMrmRV7Py2Z+Xhs7cT+FNt5K0vPL4p9EZ/UX/Mu7hFbkxSjKF2KVtPwX7UYWp7dRKnrTvReflgrItJbdw==}
     engines: {node: '>=6'}
+
+  canvas@3.1.0:
+    resolution: {integrity: sha512-tTj3CqqukVJ9NgSahykNwtGda7V33VLObwrHfzT0vqJXu7J4d4C/7kQQW3fOEGDfZZoILPut5H00gOjyttPGyg==}
+    engines: {node: ^18.12.0 || >= 20.9.0}
 
   capsolver-npm@2.0.2:
     resolution: {integrity: sha512-PvkAGTuwtKXczJeoiLu2XQ4SzJh0m7Yr3ONJuvdjEAw95LwtfGxZ3Ip/w21kR94R4O260omLGlTcQvPf2ECnLg==}
@@ -5037,6 +5094,9 @@ packages:
     resolution: {integrity: sha512-SZ40vRiy/+wRTf21hxkkEjPJZpARzUMVcJoQse2EF8qkUWbbO2z7vd5oA/H6bVH6SZQ5STGcu0KRDS7biNRfxw==}
     engines: {node: '>=10'}
 
+  node-addon-api@7.1.1:
+    resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
+
   node-addon-api@8.3.0:
     resolution: {integrity: sha512-8VOpLHFrOQlAH+qA0ZzuGRlALRA6/LVh8QJldbrC4DY0hXoMP0l4Acq8TzFC018HztWiRqyCEj2aTWY2UvnJUg==}
     engines: {node: ^18 || ^20 || >= 21}
@@ -6473,6 +6533,9 @@ packages:
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+
   undici@6.19.8:
     resolution: {integrity: sha512-U8uCCl2x9TK3WANvmBavymRzxbfFYG+tAu+fgx3zxQy3qdagQqBLwJVrdyO1TBfUXvfKveMKJZhpvUYoOjM+4g==}
     engines: {node: '>=18.17'}
@@ -7818,15 +7881,15 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.25.9': {}
 
-  '@babel/parser@7.26.5':
+  '@babel/parser@7.26.7':
     dependencies:
-      '@babel/types': 7.26.5
+      '@babel/types': 7.26.7
 
   '@babel/runtime@7.26.0':
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@babel/types@7.26.5':
+  '@babel/types@7.26.7':
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
@@ -7990,7 +8053,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02':
+  '@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063':
     dependencies:
       '@discordjs/node-pre-gyp': 0.4.5
       node-addon-api: 8.3.0
@@ -8024,11 +8087,11 @@ snapshots:
 
   '@discordjs/util@1.1.1': {}
 
-  '@discordjs/voice@0.17.0(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02)(bufferutil@4.0.9)(ffmpeg-static@5.2.0)(utf-8-validate@5.0.10)':
+  '@discordjs/voice@0.17.0(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063)(bufferutil@4.0.9)(ffmpeg-static@5.2.0)(utf-8-validate@5.0.10)':
     dependencies:
       '@types/ws': 8.5.13
       discord-api-types: 0.37.83
-      prism-media: 1.3.5(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02)(ffmpeg-static@5.2.0)
+      prism-media: 1.3.5(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063)(ffmpeg-static@5.2.0)
       tslib: 2.8.1
       ws: 8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     transitivePeerDependencies:
@@ -8085,9 +8148,9 @@ snapshots:
       '@huggingface/jinja': 0.2.2
       onnxruntime-node: 1.20.0
 
-  '@elizaos/adapter-postgres@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))':
+  '@elizaos/adapter-postgres@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@types/pg': 8.11.10
       pg: 8.13.1
     transitivePeerDependencies:
@@ -8114,9 +8177,9 @@ snapshots:
       - typeorm
       - vue
 
-  '@elizaos/adapter-sqlite@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)':
+  '@elizaos/adapter-sqlite@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@types/better-sqlite3': 7.6.12
       better-sqlite3: 11.6.0
       sqlite-vec: 0.1.6
@@ -8144,9 +8207,9 @@ snapshots:
       - typeorm
       - vue
 
-  '@elizaos/client-auto@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)':
+  '@elizaos/client-auto@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@types/body-parser': 1.19.5
       '@types/cors': 2.8.17
       '@types/express': 5.0.0
@@ -8177,10 +8240,10 @@ snapshots:
       - typeorm
       - vue
 
-  '@elizaos/client-direct@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
+  '@elizaos/client-direct@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
-      '@elizaos/plugin-image-generation': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/plugin-image-generation': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
       '@types/body-parser': 1.19.5
       '@types/cors': 2.8.17
       '@types/express': 5.0.0
@@ -8222,16 +8285,16 @@ snapshots:
       - vue
       - yaml
 
-  '@elizaos/client-discord@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(ffmpeg-static@5.2.0)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)':
+  '@elizaos/client-discord@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(ffmpeg-static@5.2.0)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)':
     dependencies:
-      '@discordjs/opus': https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02
+      '@discordjs/opus': https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063
       '@discordjs/rest': 2.4.0
-      '@discordjs/voice': 0.17.0(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02)(bufferutil@4.0.9)(ffmpeg-static@5.2.0)(utf-8-validate@5.0.10)
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
-      '@elizaos/plugin-node': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(zod@3.23.8)
+      '@discordjs/voice': 0.17.0(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063)(bufferutil@4.0.9)(ffmpeg-static@5.2.0)(utf-8-validate@5.0.10)
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/plugin-node': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(zod@3.23.8)
       discord.js: 14.16.3(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       libsodium-wrappers: 0.7.15
-      prism-media: 1.3.5(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02)(ffmpeg-static@5.2.0)
+      prism-media: 1.3.5(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063)(ffmpeg-static@5.2.0)
       whatwg-url: 14.1.0
       zod: 3.23.8
     transitivePeerDependencies:
@@ -8273,9 +8336,9 @@ snapshots:
       - vue
       - winax
 
-  '@elizaos/client-telegram@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))':
+  '@elizaos/client-telegram@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@telegraf/types': 7.1.0
       telegraf: 4.16.3
       zod: 3.23.8
@@ -8402,9 +8465,9 @@ snapshots:
       - typeorm
       - vue
 
-  '@elizaos/plugin-bootstrap@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
+  '@elizaos/plugin-bootstrap@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       tsup: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
       whatwg-url: 14.1.0
     transitivePeerDependencies:
@@ -8437,10 +8500,10 @@ snapshots:
       - vue
       - yaml
 
-  '@elizaos/plugin-evm@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@solana/wallet-adapter-base@0.9.23(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10)))(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.22.5(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8))(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)':
+  '@elizaos/plugin-evm@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@solana/wallet-adapter-base@0.9.23(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10)))(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.22.5(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8))(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
-      '@elizaos/plugin-tee': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/plugin-tee': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
       '@lifi/data-types': 5.15.5
       '@lifi/sdk': 3.4.1(@solana/wallet-adapter-base@0.9.23(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10)))(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10))(typescript@5.6.3)(viem@2.22.5(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8))
       '@lifi/types': 16.3.0
@@ -8484,9 +8547,9 @@ snapshots:
       - yaml
       - zod
 
-  '@elizaos/plugin-image-generation@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
+  '@elizaos/plugin-image-generation@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       tsup: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
       whatwg-url: 14.1.0
     transitivePeerDependencies:
@@ -8519,7 +8582,7 @@ snapshots:
       - vue
       - yaml
 
-  '@elizaos/plugin-node@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(zod@3.23.8)':
+  '@elizaos/plugin-node@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(bufferutil@4.0.9)(canvas@2.11.2)(onnxruntime-node@1.20.0)(puppeteer-core@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(puppeteer@19.11.1(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(zod@3.23.8)':
     dependencies:
       '@aws-sdk/client-s3': 3.723.0
       '@aws-sdk/s3-request-presigner': 3.723.0
@@ -8527,7 +8590,7 @@ snapshots:
       '@echogarden/espeak-ng-emscripten': 0.3.3
       '@echogarden/kissfft-wasm': 0.2.0
       '@echogarden/speex-resampler-wasm': 0.2.1
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@huggingface/transformers': 3.0.2
       '@opendocsg/pdf2md': 0.1.32
       '@types/uuid': 10.0.0
@@ -8613,12 +8676,12 @@ snapshots:
       - winax
       - zod
 
-  '@elizaos/plugin-solana@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(form-data@4.0.1)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)':
+  '@elizaos/plugin-solana@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(form-data@4.0.1)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)':
     dependencies:
       '@coral-xyz/anchor': 0.30.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
-      '@elizaos/plugin-tee': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
-      '@elizaos/plugin-trustdb': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(axios@1.7.9)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/plugin-tee': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)
+      '@elizaos/plugin-trustdb': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(axios@1.7.9)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
       '@solana/spl-token': 0.4.9(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.6.3)(utf-8-validate@5.0.10)
       '@solana/web3.js': 1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       bignumber: 1.1.0
@@ -8629,7 +8692,7 @@ snapshots:
       node-cache: 5.1.2
       pumpdotfun-sdk: 1.3.2(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rollup@4.30.1)(typescript@5.6.3)(utf-8-validate@5.0.10)
       tsup: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
-      vitest: 2.1.4(@types/node@22.8.4)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))
+      vitest: 2.1.4(@types/node@22.10.10)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))
       whatwg-url: 14.1.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -8681,17 +8744,17 @@ snapshots:
       - yaml
       - zod
 
-  '@elizaos/plugin-starknet@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(axios@1.7.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(qs@6.13.1)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
+  '@elizaos/plugin-starknet@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(axios@1.7.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(qs@6.13.1)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
     dependencies:
       '@avnu/avnu-sdk': 2.1.1(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(qs@6.13.1)(starknet@6.18.0)
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
-      '@elizaos/plugin-trustdb': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(axios@1.7.9)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/plugin-trustdb': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(axios@1.7.9)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)
       '@uniswap/sdk-core': 6.0.0
       '@unruggable_starknet/core': 0.1.0(starknet@6.18.0)
       starknet: 6.18.0
       tsup: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
       unruggable-sdk: 1.4.0(starknet@6.18.0)
-      vitest: 2.1.5(@types/node@22.8.4)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))
+      vitest: 2.1.5(@types/node@22.10.10)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))
       whatwg-url: 14.1.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -8739,9 +8802,9 @@ snapshots:
       - vue
       - yaml
 
-  '@elizaos/plugin-tee@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)':
+  '@elizaos/plugin-tee@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(axios@1.7.9)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(jiti@1.21.7)(postcss@8.4.49)(react@18.3.1)(rollup@4.30.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(utf-8-validate@5.0.10)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)(zod@3.23.8)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       '@phala/dstack-sdk': 0.1.6(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8)
       '@solana/spl-token': 0.4.9(@solana/web3.js@1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.6.3)(utf-8-validate@5.0.10)
       '@solana/web3.js': 1.95.8(bufferutil@4.0.9)(utf-8-validate@5.0.10)
@@ -8787,13 +8850,13 @@ snapshots:
       - yaml
       - zod
 
-  '@elizaos/plugin-trustdb@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(axios@1.7.9)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
+  '@elizaos/plugin-trustdb@0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(axios@1.7.9)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))(postcss@8.4.49)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(tsx@4.19.2)(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))(whatwg-url@14.1.0)(yaml@2.7.0)':
     dependencies:
-      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.73.0(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
+      '@elizaos/core': 0.1.7(@google-cloud/vertexai@1.9.2)(@langchain/core@0.3.27(openai@4.77.4(zod@3.23.8)))(axios@1.7.9)(react@18.3.1)(sswr@2.1.0(svelte@5.17.1))(svelte@5.17.1)(vue@3.5.13(typescript@5.6.3))
       dompurify: 3.2.2
       tsup: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.7.0)
       uuid: 11.0.3
-      vitest: 2.1.5(@types/node@22.8.4)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))
+      vitest: 2.1.5(@types/node@22.10.10)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10))
       whatwg-url: 14.1.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -10501,6 +10564,48 @@ snapshots:
 
   '@starknet-io/types-js@0.7.10': {}
 
+  '@supabase/auth-js@2.67.3':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/functions-js@2.4.4':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/node-fetch@2.6.15':
+    dependencies:
+      whatwg-url: 5.0.0
+
+  '@supabase/postgrest-js@1.18.1':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/realtime-js@2.11.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+      '@types/phoenix': 1.6.6
+      '@types/ws': 8.5.13
+      ws: 8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@supabase/storage-js@2.7.1':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/supabase-js@2.48.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)':
+    dependencies:
+      '@supabase/auth-js': 2.67.3
+      '@supabase/functions-js': 2.4.4
+      '@supabase/node-fetch': 2.6.15
+      '@supabase/postgrest-js': 1.18.1
+      '@supabase/realtime-js': 2.11.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      '@supabase/storage-js': 2.7.1
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   '@swc/core-darwin-arm64@1.10.7':
     optional: true
 
@@ -10659,6 +10764,10 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
+  '@types/node@22.10.10':
+    dependencies:
+      undici-types: 6.20.0
+
   '@types/node@22.7.5':
     dependencies:
       undici-types: 6.19.8
@@ -10674,6 +10783,8 @@ snapshots:
       '@types/node': 22.8.4
       pg-protocol: 1.7.0
       pg-types: 4.0.2
+
+  '@types/phoenix@1.6.6': {}
 
   '@types/qs@6.9.17': {}
 
@@ -10703,15 +10814,15 @@ snapshots:
 
   '@types/ws@7.4.7':
     dependencies:
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
 
   '@types/ws@8.5.13':
     dependencies:
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
     optional: true
 
   '@uniswap/sdk-core@4.2.1':
@@ -10755,21 +10866,21 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.4(vite@5.4.11(@types/node@22.8.4))':
+  '@vitest/mocker@2.1.4(vite@5.4.11(@types/node@22.10.10))':
     dependencies:
       '@vitest/spy': 2.1.4
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      vite: 5.4.11(@types/node@22.8.4)
+      vite: 5.4.11(@types/node@22.10.10)
 
-  '@vitest/mocker@2.1.5(vite@5.4.11(@types/node@22.8.4))':
+  '@vitest/mocker@2.1.5(vite@5.4.11(@types/node@22.10.10))':
     dependencies:
       '@vitest/spy': 2.1.5
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      vite: 5.4.11(@types/node@22.8.4)
+      vite: 5.4.11(@types/node@22.10.10)
 
   '@vitest/pretty-format@2.1.4':
     dependencies:
@@ -10829,7 +10940,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.5
+      '@babel/parser': 7.26.7
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -10842,7 +10953,7 @@ snapshots:
 
   '@vue/compiler-sfc@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.5
+      '@babel/parser': 7.26.7
       '@vue/compiler-core': 3.5.13
       '@vue/compiler-dom': 3.5.13
       '@vue/compiler-ssr': 3.5.13
@@ -11358,6 +11469,11 @@ snapshots:
       - encoding
       - supports-color
     optional: true
+
+  canvas@3.1.0:
+    dependencies:
+      node-addon-api: 7.1.1
+      prebuild-install: 7.1.2
 
   capsolver-npm@2.0.2:
     dependencies:
@@ -13405,6 +13521,8 @@ snapshots:
     dependencies:
       semver: 7.6.3
 
+  node-addon-api@7.1.1: {}
+
   node-addon-api@8.3.0: {}
 
   node-api-headers@1.4.0: {}
@@ -14012,9 +14130,9 @@ snapshots:
     dependencies:
       parse-ms: 4.0.0
 
-  prism-media@1.3.5(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02)(ffmpeg-static@5.2.0):
+  prism-media@1.3.5(@discordjs/opus@https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063)(ffmpeg-static@5.2.0):
     optionalDependencies:
-      '@discordjs/opus': https://codeload.github.com/discordjs/opus/tar.gz/31da49d8d2cc6c5a2ab1bfd332033ff7d5f9fb02
+      '@discordjs/opus': https://codeload.github.com/discordjs/opus/tar.gz/8c727579cd81831f6e866f8d82781b4bfa5f4063
       ffmpeg-static: 5.2.0
 
   process-nextick-args@2.0.1: {}
@@ -15000,14 +15118,14 @@ snapshots:
 
   ts-mixer@6.0.4: {}
 
-  ts-node@10.9.2(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.8.4)(typescript@5.6.3):
+  ts-node@10.9.2(@swc/core@1.10.7(@swc/helpers@0.5.15))(@types/node@22.10.10)(typescript@5.6.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
       acorn: 8.14.0
       acorn-walk: 8.3.4
       arg: 4.1.3
@@ -15110,6 +15228,8 @@ snapshots:
   undici-types@5.26.5: {}
 
   undici-types@6.19.8: {}
+
+  undici-types@6.20.0: {}
 
   undici@6.19.8: {}
 
@@ -15232,12 +15352,12 @@ snapshots:
       - utf-8-validate
       - zod
 
-  vite-node@2.1.4(@types/node@22.8.4):
+  vite-node@2.1.4(@types/node@22.10.10):
     dependencies:
       cac: 6.7.14
       debug: 4.4.0
       pathe: 1.1.2
-      vite: 5.4.11(@types/node@22.8.4)
+      vite: 5.4.11(@types/node@22.10.10)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -15249,13 +15369,13 @@ snapshots:
       - supports-color
       - terser
 
-  vite-node@2.1.5(@types/node@22.8.4):
+  vite-node@2.1.5(@types/node@22.10.10):
     dependencies:
       cac: 6.7.14
       debug: 4.4.0
       es-module-lexer: 1.6.0
       pathe: 1.1.2
-      vite: 5.4.11(@types/node@22.8.4)
+      vite: 5.4.11(@types/node@22.10.10)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -15267,28 +15387,28 @@ snapshots:
       - supports-color
       - terser
 
-  vite@4.5.5(@types/node@22.8.4):
+  vite@4.5.5(@types/node@22.10.10):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.4.49
       rollup: 3.29.5
     optionalDependencies:
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
       fsevents: 2.3.3
 
-  vite@5.4.11(@types/node@22.8.4):
+  vite@5.4.11(@types/node@22.10.10):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.49
       rollup: 4.30.1
     optionalDependencies:
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
       fsevents: 2.3.3
 
-  vitest@2.1.4(@types/node@22.8.4)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10)):
+  vitest@2.1.4(@types/node@22.10.10)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10)):
     dependencies:
       '@vitest/expect': 2.1.4
-      '@vitest/mocker': 2.1.4(vite@5.4.11(@types/node@22.8.4))
+      '@vitest/mocker': 2.1.4(vite@5.4.11(@types/node@22.10.10))
       '@vitest/pretty-format': 2.1.8
       '@vitest/runner': 2.1.4
       '@vitest/snapshot': 2.1.4
@@ -15304,11 +15424,11 @@ snapshots:
       tinyexec: 0.3.2
       tinypool: 1.0.2
       tinyrainbow: 1.2.0
-      vite: 5.4.11(@types/node@22.8.4)
-      vite-node: 2.1.4(@types/node@22.8.4)
+      vite: 5.4.11(@types/node@22.10.10)
+      vite-node: 2.1.4(@types/node@22.10.10)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
       jsdom: 25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10)
     transitivePeerDependencies:
       - less
@@ -15321,10 +15441,10 @@ snapshots:
       - supports-color
       - terser
 
-  vitest@2.1.5(@types/node@22.8.4)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10)):
+  vitest@2.1.5(@types/node@22.10.10)(jsdom@25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10)):
     dependencies:
       '@vitest/expect': 2.1.5
-      '@vitest/mocker': 2.1.5(vite@5.4.11(@types/node@22.8.4))
+      '@vitest/mocker': 2.1.5(vite@5.4.11(@types/node@22.10.10))
       '@vitest/pretty-format': 2.1.8
       '@vitest/runner': 2.1.5
       '@vitest/snapshot': 2.1.5
@@ -15340,11 +15460,11 @@ snapshots:
       tinyexec: 0.3.2
       tinypool: 1.0.2
       tinyrainbow: 1.2.0
-      vite: 5.4.11(@types/node@22.8.4)
-      vite-node: 2.1.5(@types/node@22.8.4)
+      vite: 5.4.11(@types/node@22.10.10)
+      vite-node: 2.1.5(@types/node@22.10.10)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.8.4
+      '@types/node': 22.10.10
       jsdom: 25.0.1(bufferutil@4.0.9)(canvas@2.11.2)(utf-8-validate@5.0.10)
     transitivePeerDependencies:
       - less

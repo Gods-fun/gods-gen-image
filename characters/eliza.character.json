@@ -8,7 +8,7 @@
       "model": "en_US-hfc_female-medium"
     },
     "chains": {
-      "evm": ["base"]
+      "evm": ["arbitrum"]
     },
     "actions": {
       "evm": {
@@ -20,7 +20,7 @@
     "plugins": {
       "evm": {
         "enabled": true,
-        "defaultChain": "base"
+        "defaultChain": "arbitrum"
       }
     }
   },
