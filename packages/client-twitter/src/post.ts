@@ -1,4 +1,4 @@
-import { IAgentRuntime, elizaLogger, stringToUuid, Memory } from "@elizaos/core";
+import { IAgentRuntime, elizaLogger, stringToUuid, Memory, generateImage } from "@elizaos/core";
 import { Scraper, Tweet as TwitterApiTweet } from "agent-twitter-client";
 import { TwitterConfig } from "./environment";
 import { ClientBase } from "./base";
@@ -32,6 +32,8 @@ export class TwitterPostClient {
     private twitterUsername: string;
     private isDryRun: boolean = false;
     private lastPostTime: number = 0;
+    private autoPostInterval: NodeJS.Timeout | null = null;
+    private isAutoPosting: boolean = false;
 
     constructor(client: ClientBase & TwitterClientAccess, runtime: IAgentRuntime, isDryRun: boolean = false) {
         elizaLogger.log("Initializing TwitterPostClient...");
@@ -294,6 +296,75 @@ export class TwitterPostClient {
             this.twitterUsername = this.client.getProfile()?.username ?? '';
             elizaLogger.log("Updated Twitter username", { username: this.twitterUsername });
         }
-        elizaLogger.log("Twitter post client started successfully");
+
+        // Start autonomous posting
+        await this.startAutoPosting();
+        elizaLogger.log("Twitter post client started successfully with auto-posting enabled");
+    }
+
+    private async startAutoPosting(): Promise<void> {
+        if (this.isAutoPosting) {
+            elizaLogger.warn("Auto-posting is already running");
+            return;
+        }
+
+        this.isAutoPosting = true;
+        elizaLogger.log("Starting autonomous posting");
+
+        // Post immediately on startup
+        await this.performAutonomousPost();
+
+        // Set up periodic posting (every 2-4 hours)
+        const postInterval = Math.floor(Math.random() * (4 - 2 + 1) + 2) * 60 * 60 * 1000;
+        this.autoPostInterval = setInterval(async () => {
+            await this.performAutonomousPost();
+        }, postInterval);
+
+        elizaLogger.log("Autonomous posting scheduled", { intervalHours: postInterval / (60 * 60 * 1000) });
+    }
+
+    private async performAutonomousPost(): Promise<void> {
+        try {
+            elizaLogger.log("Generating autonomous post content");
+
+            // Generate an image using the default Trump prompt
+            const defaultPrompt = "Generate a cinematic and realistic image of donald trump looking over a crowd, doing something interesting.";
+            const imageResult = await generateImage({
+                prompt: defaultPrompt,
+                width: 1024,
+                height: 1024
+            }, this.runtime);
+
+            if (!imageResult?.data?.[0]) {
+                throw new Error("Failed to generate image for autonomous post");
+            }
+
+            // Create tweet with generated image
+            const tweetOptions: TweetOptions = {
+                text: this.generateAutonomousText(),
+                imageAttachments: [{
+                    url: imageResult.data[0],
+                    mediaType: "image/png",
+                    description: defaultPrompt
+                }]
+            };
+
+            await this.postTweet(tweetOptions);
+            elizaLogger.log("Autonomous post completed successfully");
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : "Unknown error";
+            elizaLogger.error("Failed to create autonomous post", { error: errorMessage });
+        }
+    }
+
+    private generateAutonomousText(): string {
+        const tweets = [
+            "Making America great again! Nobody does it better than we do!",
+            "The silent majority stands with us. Look at these incredible patriots!",
+            "This is what real leadership looks like. The fake news won't show you this!",
+            "Another massive crowd of patriots! They know we're fighting for them!",
+            "The movement is stronger than ever. No fake news can stop us!"
+        ];
+        return tweets[Math.floor(Math.random() * tweets.length)];
     }
 }
