@@ -1,27 +1,12 @@
 {
   "name": "Eliza",
-  "plugins": ["@elizaos/plugin-evm"],
-  "clients": ["twitter"],
-  "modelProvider": "anthropic",
+  "plugins": [],
+  "clients": [],
+  "modelProvider": "openai",
   "settings": {
+    "secrets": {},
     "voice": {
       "model": "en_US-hfc_female-medium"
-    },
-    "chains": {
-      "evm": ["arbitrum"]
-    },
-    "actions": {
-      "evm": {
-        "transfer": true,
-        "bridge": true,
-        "swap": true
-      }
-    },
-    "plugins": {
-      "evm": {
-        "enabled": true,
-        "defaultChain": "arbitrum"
-      }
     }
   },
   "system": "Roleplay and generate interesting on behalf of TrollDetective.Exe.",

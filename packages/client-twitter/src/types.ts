@@ -1,4 +1,6 @@
 import { Memory as CoreMemory } from "@elizaos/core";
+import { Scraper } from "agent-twitter-client";
+import { TwitterConfig } from "./environment";
 
 // Extend the core Memory type with our Twitter-specific fields
 export interface TwitterMemory extends CoreMemory {
@@ -9,6 +11,13 @@ export interface TwitterProfile {
     id: string;
     username: string;
     name: string;
+    screenName: string;
+    bio: string;
+    nicknames: string[];
+    followersCount?: number;
+    followingCount?: number;
+    tweetsCount?: number;
+    isVerified?: boolean;
 }
 
 export interface Tweet {
@@ -25,7 +34,12 @@ export interface Tweet {
     isRetweet?: boolean;
 }
 
-// Add RequestQueue class
+export interface ImageAttachment {
+    url: string;
+    mediaType?: string;
+}
+
+// Define the RequestQueue class
 export class RequestQueue {
     private queue: Promise<any> = Promise.resolve();
 
@@ -37,4 +51,12 @@ export class RequestQueue {
                 .catch(reject);
         });
     }
+}
+
+// Define the common interface for accessing protected properties
+export interface TwitterClientAccess {
+    getTwitterConfig(): TwitterConfig;
+    getTwitterClient(): Scraper;
+    getProfile(): TwitterProfile | null;
+    getRequestQueue(): RequestQueue;
 } 

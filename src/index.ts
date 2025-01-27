@@ -8,7 +8,6 @@ import {
 } from "@elizaos/core";
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
 import { createNodePlugin } from "@elizaos/plugin-node";
-import { solanaPlugin } from "@elizaos/plugin-solana";
 import fs from "fs";
 import net from "net";
 import { initializeDbCache } from "./cache/index";
@@ -21,7 +20,6 @@ import {
   parseArguments,
 } from "./config/index";
 import { initializeDatabase } from "./database/index";
-import evmPlugin from "@elizaos/plugin-evm";
 import imageGenerationPlugin from "../packages/plugin-image-generation/src";
 import * as dotenv from 'dotenv';
 import path from 'path';
@@ -38,10 +36,6 @@ if (result.error) {
   process.exit(1);
 }
 
-if (!process.env.EVM_PRIVATE_KEY) {
-  console.error('EVM_PRIVATE_KEY is required but not set in .env file');
-  process.exit(1);
-}
 export const wait = (minTime: number = 1000, maxTime: number = 3000) => {
   const waitTime =
     Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
@@ -74,7 +68,6 @@ export function createAgent(
       imageGenerationPlugin,
       bootstrapPlugin,
       nodePlugin,
-      character.settings?.secrets?.WALLET_PUBLIC_KEY ? solanaPlugin : null,
     ].filter(Boolean),
     providers: [],
     actions: [],

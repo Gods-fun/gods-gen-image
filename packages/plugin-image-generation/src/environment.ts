@@ -35,30 +35,56 @@ export const imageGenEnvSchema = z
 export type ImageGenConfig = z.infer<typeof imageGenEnvSchema>;
 
 export async function validateImageGenConfig(runtime: IAgentRuntime) {
-    elizaLogger.log("Validating image generation configuration");
+    elizaLogger.log("Starting image generation environment validation");
+    elizaLogger.log("Current runtime settings:", {
+        imageModelProvider: runtime.imageModelProvider,
+        modelProvider: runtime.modelProvider,
+        characterName: runtime.character?.name
+    });
 
-    const requiredKeys = [
-        "ANTHROPIC_API_KEY",
-        "HEURIST_API_KEY",
-        "OPENAI_API_KEY",
-    ];
+    const imageModelProvider = runtime.imageModelProvider.toLowerCase();
+    let requiredKey;
 
-    const missingKeys = [];
-    for (const key of requiredKeys) {
-        const value = runtime.getSetting(key);
-        if (!value) {
-            elizaLogger.warn(`Missing configuration key: ${key}`);
-            missingKeys.push(key);
-        } else {
-            elizaLogger.debug(`Found configuration key: ${key}`);
-        }
+    elizaLogger.log(`Determining required API key for provider: ${imageModelProvider}`);
+    switch (imageModelProvider) {
+        case 'heurist':
+            requiredKey = 'HEURIST_API_KEY';
+            break;
+        case 'openai':
+            requiredKey = 'OPENAI_API_KEY';
+            break;
+        case 'anthropic':
+            requiredKey = 'ANTHROPIC_API_KEY';
+            break;
+        case 'nineteen.ai':
+            requiredKey = 'NINETEEN_AI_API_KEY';
+            break;
+        case 'together':
+            requiredKey = 'TOGETHER_API_KEY';
+            break;
+        case 'fal':
+            requiredKey = 'FAL_API_KEY';
+            break;
+        case 'venice':
+            requiredKey = 'VENICE_API_KEY';
+            break;
+        case 'livepeer':
+            requiredKey = 'LIVEPEER_GATEWAY_URL';
+            break;
+        default:
+            elizaLogger.warn(`Unknown image model provider: ${imageModelProvider}`);
+            return false;
     }
 
-    if (missingKeys.length > 0) {
-        elizaLogger.warn("Some configuration keys are missing:", missingKeys);
-    } else {
-        elizaLogger.success("All required configuration keys are present");
+    elizaLogger.log(`Required API key for ${imageModelProvider}: ${requiredKey}`);
+    const value = runtime.getSetting(requiredKey);
+    
+    if (!value) {
+        elizaLogger.warn(`Missing required API key for ${imageModelProvider}: ${requiredKey}`);
+        return false;
     }
 
+    elizaLogger.log(`Found required API key for ${imageModelProvider}`);
+    elizaLogger.log("Environment validation completed successfully");
     return true;
 }

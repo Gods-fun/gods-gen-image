@@ -9,58 +9,8 @@ import {
     ModelClass,
 } from "@elizaos/core";
 import { generateImage } from "@elizaos/core";
-import fs from "fs";
-import path from "path";
+import { SupabaseStorageService } from "./storage";
 import { validateImageGenConfig } from "./environment";
-
-export function saveBase64Image(base64Data: string, filename: string): string {
-    // Create generatedImages directory if it doesn't exist
-    const imageDir = path.join(process.cwd(), "generatedImages");
-    if (!fs.existsSync(imageDir)) {
-        fs.mkdirSync(imageDir, { recursive: true });
-    }
-
-    // Remove the data:image/png;base64 prefix if it exists
-    const base64Image = base64Data.replace(/^data:image\/\w+;base64,/, "");
-
-    // Create a buffer from the base64 string
-    const imageBuffer = Buffer.from(base64Image, "base64");
-
-    // Create full file path
-    const filepath = path.join(imageDir, `${filename}.png`);
-
-    // Save the file
-    fs.writeFileSync(filepath, imageBuffer);
-
-    return filepath;
-}
-
-export async function saveHeuristImage(
-    imageUrl: string,
-    filename: string
-): Promise<string> {
-    const imageDir = path.join(process.cwd(), "generatedImages");
-    if (!fs.existsSync(imageDir)) {
-        fs.mkdirSync(imageDir, { recursive: true });
-    }
-
-    // Fetch image from URL
-    const response = await fetch(imageUrl);
-    if (!response.ok) {
-        throw new Error(`Failed to fetch image: ${response.statusText}`);
-    }
-
-    const arrayBuffer = await response.arrayBuffer();
-    const imageBuffer = Buffer.from(arrayBuffer);
-
-    // Create full file path
-    const filepath = path.join(imageDir, `${filename}.png`);
-
-    // Save the file
-    fs.writeFileSync(filepath, imageBuffer);
-
-    return filepath;
-}
 
 const imageGeneration: Action = {
     name: "GENERATE_IMAGE",
@@ -78,7 +28,9 @@ const imageGeneration: Action = {
     description: "Generate an image to go along with the message.",
     suppressInitialMessage: true,
     validate: async (runtime: IAgentRuntime, _message: Memory) => {
+        elizaLogger.log("Starting image generation validation");
         await validateImageGenConfig(runtime);
+        elizaLogger.log("Image generation config validation completed");
 
         const anthropicApiKeyOk = !!runtime.getSetting("ANTHROPIC_API_KEY");
         const nineteenAiApiKeyOk = !!runtime.getSetting("NINETEEN_AI_API_KEY");
@@ -87,9 +39,18 @@ const imageGeneration: Action = {
         const falApiKeyOk = !!runtime.getSetting("FAL_API_KEY");
         const openAiApiKeyOk = !!runtime.getSetting("OPENAI_API_KEY");
         const veniceApiKeyOk = !!runtime.getSetting("VENICE_API_KEY");
-        const livepeerGatewayUrlOk = !!runtime.getSetting(
-            "LIVEPEER_GATEWAY_URL"
-        );
+        const livepeerGatewayUrlOk = !!runtime.getSetting("LIVEPEER_GATEWAY_URL");
+
+        elizaLogger.log("API Keys status:", {
+            anthropic: anthropicApiKeyOk,
+            nineteenAi: nineteenAiApiKeyOk,
+            together: togetherApiKeyOk,
+            heurist: heuristApiKeyOk,
+            fal: falApiKeyOk,
+            openai: openAiApiKeyOk,
+            venice: veniceApiKeyOk,
+            livepeer: livepeerGatewayUrlOk
+        });
 
         return (
             anthropicApiKeyOk ||
@@ -123,14 +84,34 @@ const imageGeneration: Action = {
         },
         callback: HandlerCallback
     ) => {
+        elizaLogger.log("Starting image generation handler");
+        elizaLogger.log("Current image model provider:", runtime.imageModelProvider);
+        elizaLogger.log("Current model provider:", runtime.modelProvider);
+
+        // Initialize SupabaseStorageService
+        const supabaseUrl = runtime.getSetting("SUPABASE_URL");
+        const supabaseKey = runtime.getSetting("SUPABASE_ANON_KEY");
+        
+        elizaLogger.log("Checking Supabase configuration");
+        if (!supabaseUrl || !supabaseKey) {
+            elizaLogger.error("Supabase configuration missing. Please set SUPABASE_URL and SUPABASE_ANON_KEY");
+            throw new Error("Supabase configuration missing");
+        }
+        elizaLogger.log("Supabase configuration validated");
+
+        const storageService = new SupabaseStorageService(supabaseUrl, supabaseKey);
+        elizaLogger.log("Supabase storage service initialized");
+
         elizaLogger.log("Composing state for message:", message);
         state = (await runtime.composeState(message)) as State;
         const userId = runtime.agentId;
-        elizaLogger.log("User ID:", userId);
+        elizaLogger.log("State composed, User ID:", userId);
 
         const CONTENT = message.content.text;
+        elizaLogger.log("Processing content:", CONTENT);
+
         const IMAGE_SYSTEM_PROMPT = `You are an expert in writing prompts for AI art generation. You excel at creating detailed and creative visual descriptions. Incorporating specific elements naturally. Always aim for clear, descriptive language that generates a creative picture. Your output should only contain the description of the image contents, but NOT an instruction like "create an image that..."`;
-        const STYLE = "futuristic with vibrant colors";
+        const STYLE = "realistic, high quality, cinematic";
 
         const IMAGE_PROMPT_INPUT = `You are tasked with generating an image prompt based on a content and a specified style.
             Your goal is to create a detailed and vivid image prompt that captures the essence of the content while incorporating an appropriate subject based on your analysis of the content.\n\nYou will be given the following inputs:\n<content>\n${CONTENT}\n</content>\n\n<style>\n${STYLE}\n</style>\n\nA good image prompt consists of the following elements:\n\n
@@ -176,20 +157,19 @@ Construct your image prompt using the following structure:\n\n
 
 Ensure that your prompt is detailed, vivid, and incorporates all the elements mentioned above while staying true to the content and the specified style. LIMIT the image prompt 50 words or less. \n\nWrite a prompt. Only include the prompt and nothing else.`;
 
+        elizaLogger.log("Starting prompt generation");
         const imagePrompt = await generateText({
             runtime,
             context: IMAGE_PROMPT_INPUT,
             modelClass: ModelClass.MEDIUM,
             customSystemPrompt: IMAGE_SYSTEM_PROMPT,
         });
+        elizaLogger.log("Generated image prompt:", imagePrompt);
 
-        elizaLogger.log("Image prompt received:", imagePrompt);
         const imageSettings = runtime.character?.settings?.imageSettings || {};
-        elizaLogger.log("Image settings:", imageSettings);
+        elizaLogger.log("Using image settings:", imageSettings);
 
-        const res: { image: string; caption: string }[] = [];
-
-        elizaLogger.log("Generating image with prompt:", imagePrompt);
+        elizaLogger.log("Starting image generation with provider:", runtime.imageModelProvider);
         const images = await generateImage(
             {
                 prompt: imagePrompt,
@@ -244,79 +224,71 @@ Ensure that your prompt is detailed, vivid, and incorporates all the elements me
             },
             runtime
         );
+        elizaLogger.log("Image generation completed, success:", images.success);
 
         if (images.success && images.data && images.data.length > 0) {
-            elizaLogger.log(
-                "Image generation successful, number of images:",
-                images.data.length
-            );
+            elizaLogger.log("Processing generated images, count:", images.data.length);
+            
             for (let i = 0; i < images.data.length; i++) {
                 const image = images.data[i];
+                const filename = `generated_${Date.now()}_${i}.png`;
+                elizaLogger.log(`Processing image ${i + 1}/${images.data.length}`);
 
-                // Save the image and get filepath
-                const filename = `generated_${Date.now()}_${i}`;
+                let imageBuffer: Buffer;
+                let imageUrl: string;
 
-                // Choose save function based on image data format
-                const filepath = image.startsWith("http")
-                    ? await saveHeuristImage(image, filename)
-                    : saveBase64Image(image, filename);
-
-                elizaLogger.log(`Processing image ${i + 1}:`, filename);
-
-                //just dont even add a caption or a description just have it generate & send
-                /*
                 try {
-                    const imageService = runtime.getService(ServiceType.IMAGE_DESCRIPTION);
-                    if (imageService && typeof imageService.describeImage === 'function') {
-                        const caption = await imageService.describeImage({ imageUrl: filepath });
-                        captionText = caption.description;
-                        captionTitle = caption.title;
+                    elizaLogger.log("Converting image data to buffer");
+                    if (image.startsWith("http")) {
+                        elizaLogger.log("Processing Heurist URL:", image);
+                        const response = await fetch(image);
+                        if (!response.ok) {
+                            throw new Error(`Failed to fetch image: ${response.statusText}`);
+                        }
+                        imageBuffer = Buffer.from(await response.arrayBuffer());
+                        elizaLogger.log("Successfully fetched and buffered Heurist image");
+                    } else {
+                        elizaLogger.log("Processing base64 image data");
+                        const base64Data = image.replace(/^data:image\/\w+;base64,/, "");
+                        imageBuffer = Buffer.from(base64Data, "base64");
+                        elizaLogger.log("Successfully converted base64 to buffer");
                     }
-                } catch (error) {
-                    elizaLogger.error("Caption generation failed, using default caption:", error);
-                }*/
 
-                const _caption = "...";
-                /*= await generateCaption(
-                    {
-                        imageUrl: image,
-                    },
-                    runtime
-                );*/
+                    elizaLogger.log("Uploading image to Supabase");
+                    imageUrl = await storageService.uploadImage(imageBuffer, filename);
+                    elizaLogger.log("Image uploaded successfully:", imageUrl);
 
-                res.push({ image: filepath, caption: "..." }); //caption.title });
-
-                elizaLogger.log(
-                    `Generated caption for image ${i + 1}:`,
-                    "..." //caption.title
-                );
-                //res.push({ image: image, caption: caption.title });
-
-                callback(
-                    {
-                        text: "...", //caption.description,
-                        attachments: [
-                            {
-                                id: crypto.randomUUID(),
-                                url: filepath,
-                                title: "Generated image",
-                                source: "imageGeneration",
-                                description: "...", //caption.title,
-                                text: "...", //caption.description,
-                                contentType: "image/png",
-                            },
-                        ],
-                    },
-                    [
+                    callback(
                         {
-                            attachment: filepath,
-                            name: `${filename}.png`,
+                            text: "...",
+                            attachments: [
+                                {
+                                    id: crypto.randomUUID(),
+                                    url: imageUrl,
+                                    title: "Generated image",
+                                    source: "imageGeneration",
+                                    description: "...",
+                                    text: "...",
+                                    contentType: "image/png",
+                                },
+                            ],
                         },
-                    ]
-                );
+                        [
+                            {
+                                attachment: imageUrl,
+                                name: filename,
+                            },
+                        ]
+                    );
+                    elizaLogger.log("Callback executed successfully for image:", filename);
+                } catch (error) {
+                    elizaLogger.error("Error processing and uploading image:", error);
+                    throw error;
+                }
             }
         } else {
-            elizaLogger.error("Image generation failed or returned no data.");
+            elizaLogger.error("Image generation failed or returned no data");
+            throw new Error("Image generation failed");
         }
     },
     examples: [
