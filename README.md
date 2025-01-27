@@ -1,52 +1,161 @@
-# Eliza
+# Twitter Image Posts Agent
 
-## Edit the character files
+A powerful AI agent capable of generating and posting images to Twitter, with customizable character personalities and multiple model provider support. Has the bare minimum features to generate and post images to Twitter based on user's request.
 
-Open `src/character.ts` to modify the default character. Uncomment and edit.
+## Prerequisites
 
-### Custom characters
+- Node.js (v23.3.0 or higher)
+- pnpm package manager (v9.0.0 or higher)
+- Twitter account credentials
+- API keys for chosen model providers
 
-To load custom characters instead:
-- Use `pnpm start --characters="path/to/your/character.json"`
-- Multiple character files can be loaded simultaneously
+## Quick Start
 
-### Add clients
-
-```diff
-- clients: [],
-+ clients: [Clients.TWITTER, Clients.DISCORD],
-```
-
-## Duplicate the .env.example template
-
+1. Clone the repository
+2. Copy the environment template:
 ```bash
 cp .env.example .env
+``` 
+3. Install dependencies and start the agent:
+```bash
+pnpm i
+pnpm build 
+pnpm start
 ```
 
-\* Fill out the .env file with your own values.
+## Configuration
+
+### Character Configuration
+
+The agent's personality and behavior can be customized through character files:
+
+1. **Default Character**: 
+   - Open `src/character.ts` to modify the default character
+   - Uncomment and edit the desired sections
+
+2. **Custom Characters**:
+   - Create a JSON file following the template in `characters/trump.character.json`
+   - Load custom characters using:
+     ```bash
+     pnpm start --characters="path/to/your/character.json"
+     ```
+   - Multiple character files can be loaded simultaneously
+
+### Environment Variables (.env)
+
+Key configurations required in your .env file:
+
+#### 1. Twitter Configuration
+```env
+TWITTER_USERNAME=           # Account username
+TWITTER_PASSWORD=           # Account password
+TWITTER_EMAIL=              # Account email
+TWITTER_DRY_RUN=false      # Set to true for testing without posting
+TWITTER_POLL_INTERVAL=150   # Check interval for interactions (seconds)
+POST_INTERVAL_MIN=3         # Minimum interval between posts (minutes)
+POST_INTERVAL_MAX=10        # Maximum interval between posts (minutes)
+```
+
+#### 2. Model Providers (Choose at least one)
+
+##### OpenAI
+```env
+OPENAI_API_KEY=            # OpenAI API key
+```
+
+##### Heurist
+```env
+HEURIST_API_KEY=           # Heurist API key
+HEURIST_IMAGE_MODEL=       # Default: FLUX.1-dev
+```
 
 ### Add login credentials and keys to .env
 
-```diff
--DISCORD_APPLICATION_ID=
--DISCORD_API_TOKEN= # Bot token
-+DISCORD_APPLICATION_ID="000000772361146438"
-+DISCORD_API_TOKEN="OTk1MTU1NzcyMzYxMT000000.000000.00000000000000000000000000000000"
-...
--OPENROUTER_API_KEY=
-+OPENROUTER_API_KEY="sk-xx-xx-xxx"
-...
--TWITTER_USERNAME= # Account username
--TWITTER_PASSWORD= # Account password
--TWITTER_EMAIL= # Account email
-+TWITTER_USERNAME="username"
-+TWITTER_PASSWORD="password"
-+TWITTER_EMAIL="your@email.com"
+#### 3. Optional Configurations
+
+##### SupaBase Integration
+```env
+SUPABASE_URL=                # Supabase URL
+SUPABASE_ANON_KEY=           # Supabase anon key
 ```
 
 ## Install dependencies and start your agent
 
-```bash
-pnpm i && pnpm start
+## Character Customization
+
+Your character file (`character.json`) can include:
+
+```json
+{
+  "name": "character_name",
+  "clients": ["twitter"],
+  "modelProvider": "openai",
+  "imageModelProvider": "heurist",
+  "settings": {
+    "secrets": {
+      "twitterUsername": "YourTwitterHandle"
+    }
+  },
+  "plugins": [
+    "@elizaos/plugin-image-generation"
+  ],
+  "bio": [
+    "Character biography points"
+  ],
+  "lore": [
+    "Character background information"
+  ],
+  "knowledge": [
+    "Character knowledge base"
+  ],
+  "messageExamples": [
+    // Example interactions (important to provide positive and negative examples of when the character should respond in a certain way)
+  ],
+  "style": {
+    "chat": [
+      "Styling rules for chat responses"
+    ],
+    "post": [
+      "Styling rules for posts"
+    ]
+  }
+}
 ```
-Note: this requires node to be at least version 22 when you install packages and run the agent.
+
+## Available Plugins
+
+- Image Generation (@elizaos/plugin-image-generation)
+
+## Advanced Features
+
+### Post Intervals
+- Configure minimum and maximum intervals between posts
+- Enable immediate posting with POST_IMMEDIATELY=true
+
+### Action Processing
+- Control interaction frequency with ACTION_INTERVAL
+- Set maximum actions per cycle with MAX_ACTIONS_PROCESSING
+
+### Timeline Interaction
+- Configure timeline type with ACTION_TIMELINE_TYPE
+- Enable/disable search functionality with TWITTER_SEARCH_ENABLE
+
+## Troubleshooting
+
+1. **Login Issues**:
+   - Verify Twitter credentials
+   - Check TWITTER_RETRY_LIMIT setting
+   - Enable VERBOSE=true for detailed logs
+
+2. **Rate Limiting**:
+   - Adjust POST_INTERVAL_MIN and POST_INTERVAL_MAX
+   - Monitor ACTION_INTERVAL settings
+
+3. **API Errors**:
+   - Verify API keys
+   - Check model provider status
+   - Review error logs
+
+## Support
+
+For additional support or feature requests, please open an issue in the repository.
