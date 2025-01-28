@@ -8,6 +8,7 @@ interface ImageAttachment {
     url?: string;
     mediaType: string;
     description?: string;
+    loraWeights?: Record<string, number>;  // Add LoRA support
 }
 
 interface TweetOptions {
@@ -241,6 +242,7 @@ export class TwitterPostClient {
     }
 
     async replyWithImage(tweetId: string, content: string, image: ImageAttachment): Promise<void> {
+        // The image attachment now supports loraWeights through the updated interface
         await this.postTweet({
             text: content,
             replyToId: tweetId,
@@ -327,25 +329,35 @@ export class TwitterPostClient {
         try {
             elizaLogger.log("Generating autonomous post content");
 
-            // Generate an image using the default Trump prompt
-            const defaultPrompt = "Generate a cinematic and realistic image of donald trump looking over a crowd, doing something interesting.";
+            // Get character configuration
+            const characterConfig = this.runtime.character;
+            const defaultPrompt = characterConfig.settings?.imageGeneration?.defaultPrompt || 
+                "Generate a cinematic and realistic image";
+            const imageSettings = characterConfig.settings?.imageGeneration || {};
+
             const imageResult = await generateImage({
                 prompt: defaultPrompt,
-                width: 1024,
-                height: 1024
+                width: imageSettings.width || 1024,
+                height: imageSettings.height || 1024,
+                modelId: imageSettings.modelId || "FLUX.1-dev",
+                guidanceScale: imageSettings.guidanceScale || 7.5,
+                loraWeights: imageSettings.loraWeights || {}
             }, this.runtime);
 
             if (!imageResult?.data?.[0]) {
                 throw new Error("Failed to generate image for autonomous post");
             }
 
-            // Create tweet with generated image
+            // Use character's post examples for text generation
+            const tweetText = this.generateAutonomousText(characterConfig.postExamples);
+
             const tweetOptions: TweetOptions = {
-                text: this.generateAutonomousText(),
+                text: tweetText,
                 imageAttachments: [{
                     url: imageResult.data[0],
                     mediaType: "image/png",
-                    description: defaultPrompt
+                    description: imageSettings.defaultDescription || "A generated image",
+                    loraWeights: imageSettings.loraWeights
                 }]
             };
 
@@ -357,14 +369,11 @@ export class TwitterPostClient {
         }
     }
 
-    private generateAutonomousText(): string {
-        const tweets = [
-            "Making America great again! Nobody does it better than we do!",
-            "The silent majority stands with us. Look at these incredible patriots!",
-            "This is what real leadership looks like. The fake news won't show you this!",
-            "Another massive crowd of patriots! They know we're fighting for them!",
-            "The movement is stronger than ever. No fake news can stop us!"
-        ];
-        return tweets[Math.floor(Math.random() * tweets.length)];
+    private generateAutonomousText(postExamples: string[] = []): string {
+        if (!postExamples.length) {
+            // Fallback to default tweets if no examples provided
+            return this.defaultTweets[Math.floor(Math.random() * this.defaultTweets.length)];
+        }
+        return postExamples[Math.floor(Math.random() * postExamples.length)];
     }
 }

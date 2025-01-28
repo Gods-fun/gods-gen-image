@@ -214,10 +214,9 @@ export class TwitterInteractionClient {
                 const isMention = cleanedText.includes(`@${this.client.getTwitterConfig().TWITTER_USERNAME.toLowerCase()}`);
                 
                 if (isMention) {
-                    // Handle mentions/replies with contextual Trump image
-                    const contextualPrompt = `Generate a cinematic and realistic image of donald trump ${this.generateContextualPrompt(tweet.text || '')}`;
+                    const contextualPrompt = this.generateImagePrompt(tweet.text || '');
                     
-                    elizaLogger.log("Generating contextual Trump image", {
+                    elizaLogger.log("Generating contextual image", {
                         tweetId: tweet.id,
                         prompt: contextualPrompt
                     });
@@ -226,27 +225,39 @@ export class TwitterInteractionClient {
                     
                     if (attachment && attachment.url) {
                         if (tweet.id) {
-                            await this.client.post.replyWithImage(tweet.id, this.generateReplyText(tweet.text || ''), {
+                            const replyText = await this.generateReplyText(tweet.text || '', tweet);
+                            await this.client.post.replyWithImage(tweet.id, replyText, {
                                 url: attachment.url,
                                 mediaType: attachment.mediaType
                             });
                         }
                     } else {
                         if (tweet.id) {
-                            await this.client.post.reply(tweet.id, "I apologize, but I couldn't generate an image at this time. Let me respond anyway: " + this.generateReplyText(tweet.text || ''));
+                            const replyText = await this.generateReplyText(tweet.text || '', tweet);
+                            await this.client.post.reply(tweet.id, "I apologize" + replyText);
                         }
                     }
                 } else {
-                    // For new posts, use the default Trump prompt
-                    const defaultPrompt = "Generate a cinematic and realistic image of donald trump looking over a crowd, doing something interesting.";
-                    const attachment = await this.client.handleImageGenerationRequest(tweet, defaultPrompt);
+                    // Check if tweet contains any topics or adjectives
+                    const shouldRespond = this.shouldRespondToRandomTweet(cleanedText);
                     
-                    if (attachment && attachment.url) {
-                        if (tweet.id) {
-                            await this.client.post.replyWithImage(tweet.id, tweet.text || '', {
-                                url: attachment.url,
-                                mediaType: attachment.mediaType
-                            });
+                    if (shouldRespond) {
+                        const contextualPrompt = this.generateImagePrompt(tweet.text || '');
+                        elizaLogger.log("Generating contextual image for random tweet", {
+                            tweetId: tweet.id,
+                            prompt: contextualPrompt
+                        });
+
+                        const attachment = await this.client.handleImageGenerationRequest(tweet, contextualPrompt);
+                        
+                        if (attachment && attachment.url) {
+                            if (tweet.id) {
+                                const replyText = await this.generateReplyText(tweet.text || '', tweet);
+                                await this.client.post.replyWithImage(tweet.id, replyText, {
+                                    url: attachment.url,
+                                    mediaType: attachment.mediaType
+                                });
+                            }
                         }
                     }
                 }
@@ -260,60 +271,87 @@ export class TwitterInteractionClient {
         }
     }
 
-    private generateContextualPrompt(text: string): string {
-        // Remove mentions and common words to extract context
-        const cleanText = text
-            .replace(/@\w+/g, '')
-            .replace(/generate|image|please|can you/gi, '')
-            .trim();
+    private shouldRespondToRandomTweet(text: string): boolean {
+        // Get topics and adjectives from character config
+        const topics = this.runtime.config.topics || [];
+        const adjectives = this.runtime.config.adjectives || [];
         
-        // If no specific context, return a default action
-        if (!cleanText) {
-            return "addressing a crowd with a powerful gesture";
-        }
+        // Convert text to lowercase for case-insensitive matching
+        const lowerText = text.toLowerCase();
         
-        return cleanText;
+        // Check if text contains any topics or adjectives
+        const hasKeyword = [...topics, ...adjectives].some(keyword => 
+            lowerText.includes(keyword.toLowerCase())
+        );
+        
+        // Randomly decide to respond (20% chance if keyword found)
+        return hasKeyword && Math.random() < 0.2;
     }
 
-    private generateReplyText(text: string): string {
-        // Analyze the tweet content to determine the appropriate response type
-        const isQuestion = text.includes('?');
-        const isRequest = /please|can you|could you/i.test(text);
-        const isCriticism = /(fake|wrong|bad|terrible|horrible|failing)/i.test(text);
+    private generateImagePrompt(text: string): string {
+    
+        return `A cinematic and realistic scene of Donald Trump which includes this as context: ${text}. Make it dramatic and impactful.`;
+    }
+
+    private async generateReplyText(text: string, tweet: Tweet): Promise<string> {
+        // Extract key elements from the tweet
+        const cleanText = text.replace(/@\w+/g, '').trim();
+        const keywords = cleanText.toLowerCase().match(/\b\w+\b/g) || [];
         
-        // Collection of authentic Trump-style responses
-        const responses = [
-            // General enthusiasm responses
-            "Tremendous image, folks! Nobody's ever seen anything like it. AMAZING!",
-            "This is what TRUE leadership looks like. The fake news media won't show you this!",
-            "Many people are saying this is the most beautiful image they've ever seen. And they're right!",
-            "We're doing things nobody thought possible. Just look at this masterpiece!",
-            "The radical left doesn't want you to see this. But we're showing it anyway. Beautiful!",
-            
-            // Question/Request responses
-            "Ask and you shall receive! Nobody delivers like we do. NOBODY!",
-            "When you want something done right, you come to me. Look at this masterpiece!",
-            "You asked for it, and I delivered BIG TIME! That's what real leaders do!",
-            
-            // Criticism handling
-            "While the haters and losers spread FAKE NEWS, we keep winning! Look at this!",
-            "They said it couldn't be done. WRONG! We did it, and it's BEAUTIFUL!",
-            "The fake news media is in total meltdown. Meanwhile, we're creating MAGIC!"
-        ];
+        // Analyze tweet characteristics
+        const analysis = {
+            isQuestion: text.includes('?'),
+            hasExclamation: text.includes('!'),
+            isCritical: /(fake|wrong|bad|terrible|horrible|failing)/i.test(text),
+            isPositive: /(great|amazing|wonderful|good|best)/i.test(text),
+            mentionsMedia: /(media|news|press|journalist)/i.test(text),
+            mentionsAction: /(do|make|create|build|show)/i.test(text),
+            mentionsAmerica: /(america|usa|united states|country)/i.test(text)
+        };
+
+        // Dynamic response construction
+        let response = '';
         
-        // Select appropriate response based on context
-        let filteredResponses = responses;
-        if (isQuestion || isRequest) {
-            filteredResponses = responses.slice(5, 8);  // Use request-specific responses
-        } else if (isCriticism) {
-            filteredResponses = responses.slice(8);  // Use criticism-handling responses
+        // Opening
+        if (analysis.isQuestion) {
+            response += `Let me tell you, folks - `;
+        } else if (analysis.isCritical) {
+            response += `WRONG! `;
+        } else if (analysis.isPositive) {
+            response += `That's right! `;
         } else {
-            filteredResponses = responses.slice(0, 5);  // Use general enthusiasm responses
+            response += `Listen up - `;
+        }
+
+        // Main content based on tweet context
+        if (analysis.mentionsMedia) {
+            response += `The FAKE NEWS won't show you what's really happening! Here's the TRUTH! `;
         }
         
-        // Return a random response from the filtered set
-        return filteredResponses[Math.floor(Math.random() * filteredResponses.length)];
+        if (analysis.mentionsAmerica) {
+            response += `This is what REAL AMERICAN GREATNESS looks like! `;
+        }
+
+        // Add specific reference to tweet content
+        const relevantKeywords = keywords
+            .filter(word => word.length > 3)
+            .slice(0, 2)
+            .join(' and ');
+        
+        if (relevantKeywords) {
+            response += `Nobody knows ${relevantKeywords} better than me, believe me! `;
+        }
+
+        // Closing (modified to remove 'image' references)
+        if (analysis.hasExclamation) {
+            response += `TREMENDOUS! 🇺🇸`;
+        } else {
+            response += `Everyone's talking about how incredible this is! MAGA! 🇺🇸`;
+        }
+
+        return response.trim();
     }
+
 
     stop(): void {
         elizaLogger.log("Stopping Twitter interaction client");
